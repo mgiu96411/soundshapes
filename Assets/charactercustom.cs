@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class charactercustom : MonoBehaviour
 {
-
+    public Animator anim;
     public Rigidbody2D rb;
     public float speed;// = 360f;
     public float maxSpeed;//  = 5f;
@@ -16,6 +16,11 @@ public class charactercustom : MonoBehaviour
     public int jumps;
 
     float lastTimeOnFloor;
+
+    private void Start()
+    {
+       anim = GetComponent<Animator>();
+    }
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
@@ -28,12 +33,29 @@ public class charactercustom : MonoBehaviour
             lastTimeOnFloor = Time.time;
             rb.AddForce(new Vector2(0f, jumpForce));
             jumps = 1;
+            anim.SetBool("jump", true);
         }
         else if (Input.GetButtonDown("Jump") && jumps == 1)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(0f, jumpForce * jumpSecondFactor));
             jumps = 2;
+            anim.SetBool("jump", true);
         }
+        else if(jumps == 2)
+        {
+            anim.SetBool("jump", false);
+        }
+        
+        if(Mathf.Abs(h) >= 0.3f)
+        {
+            anim.SetFloat("walk", Mathf.Abs(h));
+        }
+        else
+        {
+            anim.SetFloat("walk", Mathf.Abs(h));
+        }
+        Debug.Log(h);
     }
+    
 }
