@@ -46,8 +46,16 @@ public class charactercustom : MonoBehaviour
         {
             anim.SetBool("jump", false);
         }
+        if (h < 0)
+            //transform.localScale = new Vector3(-this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
+            transform.localScale = new Vector3(-0.25f, 0.25f, 0.25f);
+            
         
-        if(Mathf.Abs(h) >= 0.3f)
+        else if (h > 0)
+            //transform.localScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
+            transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+
+        if (Mathf.Abs(h) >= 0.3f)
         {
             anim.SetFloat("walk", Mathf.Abs(h));
         }
@@ -55,7 +63,7 @@ public class charactercustom : MonoBehaviour
         {
             anim.SetFloat("walk", Mathf.Abs(h));
         }
-        Debug.Log(h);
+        //Debug.Log(h);
     }
     
 }
