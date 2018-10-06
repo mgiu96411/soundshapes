@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 198973437987997058}
   - component: {fileID: 199385237306875722}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: particles_bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -763,10 +763,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4682122616402672}
   - component: {fileID: 50946497227146138}
-  - component: {fileID: 61232378820541034}
   - component: {fileID: 70879190023655058}
-  - component: {fileID: 114392936712888978}
   - component: {fileID: 95222892721126582}
+  - component: {fileID: 58481409266352966}
+  - component: {fileID: 114864229796613778}
+  - component: {fileID: 114089293590523042}
+  - component: {fileID: 114518663222364688}
+  - component: {fileID: 114439820279474318}
   m_Layer: 0
   m_Name: Octopuss
   m_TagString: Untagged
@@ -1247,7 +1250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908137874836440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8, y: 1.3, z: -2}
+  m_LocalPosition: {x: -9.1, y: -5.45, z: -2}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4091860686553388}
@@ -1568,8 +1571,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61232378820541034
-BoxCollider2D:
+--- !u!58 &58481409266352966
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1580,19 +1583,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.19}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.25}
   serializedVersion: 2
-  m_Size: {x: 3.95, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1.1
 --- !u!70 &70879190023655058
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -1606,7 +1599,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.68}
-  m_Size: {x: 2.59, y: 3.83}
+  m_Size: {x: 1.5, y: 3}
   m_Direction: 0
 --- !u!95 &95222892721126582
 Animator:
@@ -1626,7 +1619,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114392936712888978
+--- !u!114 &114089293590523042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908137874836440}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffc12817847f4242b35b15a2ef7f5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 0
+  rb: {fileID: 50946497227146138}
+  speed: 5
+  maxSpeed: 6.6
+  jumpForce: 300
+  jumpSecondFactor: 0.5
+  grounded: 0
+  groundCheck: {fileID: 4071082490405018}
+  jumps: 0
+--- !u!114 &114439820279474318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908137874836440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb4b379e06db461f8869f3c98b8b183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
+  speed: 6
+  maxSpeed: 6
+--- !u!114 &114518663222364688
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1637,12 +1665,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90c9df6581fe40fe9a221f33ec3f818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 50946497227146138}
+  speed: 6
+  jumpForce: 400
+  jumpAllowed: 0
+--- !u!114 &114864229796613778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908137874836440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84e6163e4677b840a2a2e76b03bb9aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   anim: {fileID: 95222892721126582}
   rb: {fileID: 50946497227146138}
-  speed: 2
-  maxSpeed: 7
-  jumpForce: 320
-  jumpSecondFactor: 0.8
+  speed: 5
+  maxSpeed: 6.6
+  jumpForce: 300
+  jumpSecondFactor: 0.5
   grounded: 0
   groundCheck: {fileID: 4071082490405018}
   jumps: 0
@@ -1715,7 +1758,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
   randomSeed: 0
@@ -2472,7 +2515,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 24.2
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
