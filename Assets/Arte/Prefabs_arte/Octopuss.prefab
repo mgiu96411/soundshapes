@@ -367,21 +367,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1447901237404360
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4071082490405018}
-  m_Layer: 0
-  m_Name: groundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1552389638993816
 GameObject:
   m_ObjectHideFlags: 1
@@ -766,13 +751,11 @@ GameObject:
   - component: {fileID: 70879190023655058}
   - component: {fileID: 95222892721126582}
   - component: {fileID: 58481409266352966}
-  - component: {fileID: 114864229796613778}
-  - component: {fileID: 114089293590523042}
   - component: {fileID: 114518663222364688}
   - component: {fileID: 114439820279474318}
   m_Layer: 0
   m_Name: Octopuss
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -865,19 +848,6 @@ Transform:
   - {fileID: 4112122032203196}
   - {fileID: 4298187405814984}
   m_Father: {fileID: 4786663149052284}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4071082490405018
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1447901237404360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4682122616402672}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4083460500108428
@@ -1171,7 +1141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4682122616402672}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4519546781045214
 Transform:
@@ -1250,11 +1220,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1908137874836440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.1, y: -5.45, z: -2}
+  m_LocalPosition: {x: -8.82, y: -5.03, z: -2}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4091860686553388}
-  - {fileID: 4071082490405018}
   - {fileID: 4467128928820148}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1619,26 +1588,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114089293590523042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1908137874836440}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ffc12817847f4242b35b15a2ef7f5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coins: 0
-  rb: {fileID: 50946497227146138}
-  speed: 5
-  maxSpeed: 6.6
-  jumpForce: 300
-  jumpSecondFactor: 0.5
-  grounded: 0
-  groundCheck: {fileID: 4071082490405018}
-  jumps: 0
 --- !u!114 &114439820279474318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1669,26 +1618,6 @@ MonoBehaviour:
   speed: 6
   jumpForce: 400
   jumpAllowed: 0
---- !u!114 &114864229796613778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1908137874836440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d84e6163e4677b840a2a2e76b03bb9aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 95222892721126582}
-  rb: {fileID: 50946497227146138}
-  speed: 5
-  maxSpeed: 6.6
-  jumpForce: 300
-  jumpSecondFactor: 0.5
-  grounded: 0
-  groundCheck: {fileID: 4071082490405018}
-  jumps: 0
 --- !u!198 &198973437987997058
 ParticleSystem:
   m_ObjectHideFlags: 1
