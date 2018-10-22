@@ -9,6 +9,9 @@ public class charactercustom : MonoBehaviour
     public float jumpForce;//  = 500f;
     public bool jumpAllowed;
 
+    public OctoAnim anim;
+
+
     void OnCollisionEnter2D(Collision2D col)
     {
         print(col.gameObject.tag);
@@ -28,8 +31,14 @@ public class charactercustom : MonoBehaviour
 
     void Update()
     {
+
         float h = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(h * speed, rb.velocity.y);
+
+        if (h != 0)
+        {
+            //anim.Walk();
+            rb.velocity = new Vector2(h * speed, rb.velocity.y);
+        }
 
         if (Input.GetButtonDown("Jump") && jumpAllowed == true)
         {

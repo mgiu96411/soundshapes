@@ -5,6 +5,7 @@ using UnityEngine;
 public class bounce : MonoBehaviour {
 
     public float bounceForce;
+    public float sidebounceForce;
 
 
     void OnTriggerEnter2D(Collider2D other)
