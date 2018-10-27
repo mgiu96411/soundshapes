@@ -1,16 +1,15 @@
 ﻿<Properties StartupConfiguration="{F257F27E-CA93-FE86-3AFD-1C4FD1F42760}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/toxicwaste.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/wallJump.cs">
     <Files>
-      <File FileName="Assets/CameraController.cs" Line="20" Column="1" />
-      <File FileName="Assets/Character/betterJump.cs" Line="15" Column="17" />
-      <File FileName="Assets/Character/charactercustom.cs" Line="11" Column="1" />
-      <File FileName="Assets/bounce.cs" Line="20" Column="1" />
-      <File FileName="Assets/UIManager.cs" Line="12" Column="13" />
-      <File FileName="Assets/toxicwaste.cs" Line="7" Column="2" />
-      <File FileName="Assets/wallJump.cs" Line="12" Column="30" />
-      <File FileName="Assets/OctoAnim.cs" Line="51" Column="9" />
-      <File FileName="Assets/plantas.cs" Line="1" Column="1" />
+      <File FileName="Assets/Coin.cs" Line="1" Column="1" />
+      <File FileName="Assets/musicTrigger.cs" Line="17" Column="1" />
+      <File FileName="Assets/Events.cs" Line="23" Column="1" />
+      <File FileName="Assets/Character/charactercustom.cs" Line="28" Column="34" />
+      <File FileName="Assets/Character/betterJump.cs" Line="1" Column="1" />
+      <File FileName="Assets/SoundManager.cs" Line="76" Column="20" />
+      <File FileName="Assets/star.cs" Line="5" Column="18" />
+      <File FileName="Assets/wallJump.cs" Line="51" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

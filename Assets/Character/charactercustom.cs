@@ -14,7 +14,7 @@ public class charactercustom : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        print(col.gameObject.tag);
+        //print(col.gameObject.tag);
         if (col.gameObject.tag.Equals("floor"))
         {
             jumpAllowed = true;

@@ -29,22 +29,22 @@ public class wallJump : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collision2D other)
-    {
-        charactercustom Octopus = other.gameObject.GetComponent<charactercustom>();
-        if (Octopus != null)
-        {
-            checkCollidingSide();
-            if (Input.GetButtonDown("Jump") && WallJumpAllowedLeft == true)
-            {
-                rb.AddForce(new Vector2(100f, WallJumpForceUp));
-            }
+//    void OnTriggerEnter2D(Collision2D other)
+//    {
+//        charactercustom Octopus = other.gameObject.GetComponent<charactercustom>();
+//        if (Octopus != null)
+//        {
+//            checkCollidingSide();
+//            if (Input.GetButtonDown("Jump") && WallJumpAllowedLeft == true)
+//            {
+//                rb.AddForce(new Vector2(100f, WallJumpForceUp));
+//            }
 
-            if (Input.GetButtonDown("Jump") && WallJumpAllowedRight == true)
-            {
-                rb.AddForce(new Vector2(-100f, WallJumpForceUp));
-            }
-        }
-    }
+//            if (Input.GetButtonDown("Jump") && WallJumpAllowedRight == true)
+//            {
+//                rb.AddForce(new Vector2(-100f, WallJumpForceUp));
+//            }
+//        }
+//    }
 
 }

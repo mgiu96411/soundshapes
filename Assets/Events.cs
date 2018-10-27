@@ -1,16 +1,24 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Events : MonoBehaviour {
+public static class Events
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static System.Action<string> OnSoundFX = delegate { };
+    public static System.Action<string, float> OnMusicOn = delegate { };
+    public static System.Action<string, float> OnChar = delegate { };
+    //public static System.Action<string> OnMusicOn = delegate { };
+    //public static System.Action<string> <float> OnMusicOn = delegate { };
+
 }
+
+//void OnSoundFX(string audioName, float volume)
+
+
+
+//int totalMusSounds = 4;
+
+
+
+//SoundManager.OnChar(string, float)'
