@@ -58,7 +58,7 @@ void OnSoundFX(string audioName)
             AudioClip clip = Resources.Load(audioName) as AudioClip;
             source.clip = clip;
             source.volume = .5f;
-            source.pitch = Random.Range( 20f, 12f);
+            source.pitch = Random.Range( .95f, 1.2f);
             source.Play();
             Destroy(source, source.clip.length);
         }
