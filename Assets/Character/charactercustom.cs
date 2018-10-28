@@ -43,6 +43,8 @@ public class charactercustom : MonoBehaviour
         if (Input.GetButtonDown("Jump") && jumpAllowed == true)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
+            Events.OnChar("jump", .5f);
+
         }
    
     }

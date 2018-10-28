@@ -30,7 +30,7 @@ public class star : MonoBehaviour
             //uiManager.GetCoin (); 
             target = character;
             Invoke("OnDestroy", 0.25f);
-            print("star");
+            //print("star");
         }
     }
     void OnDestroy()

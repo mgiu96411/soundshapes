@@ -52,7 +52,7 @@ void OnSoundFX(string audioName)
             //id++;
             //if (id > totalCoinSounds)
             //id = 1;
-            print("star");
+            //print("star");
             audioName = "sounds/star";
             AudioSource source = gameObject.AddComponent<AudioSource>();
             AudioClip clip = Resources.Load(audioName) as AudioClip;
@@ -70,7 +70,7 @@ void OnSoundFX(string audioName)
             id++;
             if (id > totalCoinSounds)
                 id = 1;
-            print(id);
+            //print(id);
             audioName = "sounds/pu_" + id;
             AudioSource source = gameObject.AddComponent<AudioSource>();
             AudioClip clip = Resources.Load(audioName) as AudioClip;
@@ -112,62 +112,96 @@ void OnSoundFX(string audioName)
         }
     }
 
-    //
+    
 
 
-    void OnMusicOn(string audioName, float volume = .9f)
-    //void OnMusicOn(string audioName)
+        void OnMusicOn(string audioName, float volume = .9f)
+        //void OnMusicOn(string audioName)
 
-    {
-        if (audioName == "mus")
         {
+            if (audioName == "mus")
+            {
             // ??? PORQUE ID ARRANCA EN 2? 
             // A VECS REPITE EL INDICE CON 2 OBJETOS DISTINTOS 
-            //id = 0;
+
             id++;
             if (id > totalMusSounds)
             id = 1;
 
+
             //COMO HACER QUE EL INDICE 3 REPRODUZCA A OTRO VOLUMEN?
             //if (id = 3)
+            //volume = .5f;
+            print(audioName + id);
+                audioName = "sounds/mus_" + id;
                 //volume = .5f;
 
-            //audioName = "sounds/pu_" + id;
-            print(audioName + id);
-            audioName = "sounds/mus_" + id;
-            //volume = .5f;
+                //
 
 
-            //audioName = "sounds/mus_2";
-            //volume = .05f;
-            //audioName = "sounds/mus_3";
-            //volume = .05f;
-            //audioName = "sounds/mus_4";
-            //volume = .05f;
+                AudioSource source = gameObject.AddComponent<AudioSource>();
+        AudioClip clip = Resources.Load(audioName) as AudioClip;
+             source.clip = clip;
+            source.volume = .75f;
+                //source.pitch = Mathf.Lerp( 1f, 1.4f, ((float)Random.Range (1, 20)/10) );
+                source.loop = true;
+                source.Play();
+                //Destroy(source, source.clip.length);
+
+                //Destroy(this.gameObject);
+
+            }
+    }
 
 
 
-            //audioName = "sounds/mus_" + id;
+    ////UN INTENTO PARA HACER QUE TODOS LOS ARCHIVOS ARRANQUEN JUNTOS  
+    //// HACE PLAY SOLO DEL ULTIMO ARCHIVO , TOMA EL ULTIMO AUDIONAME Y SOLO EJECYTA LA RUTINA PARA ESE ARCHVO
+    ////
+    //void OnMusicOn(string audioName, float volume = .9f)
+    ////void OnMusicOn(string audioName)
 
+    //    {
+    //        if (audioName == "mus")
+    //        {
 
+    //            //print(audioName + id);
+    //            audioName = "sounds/mus_1";
+    //        AudioSource source = gameObject.AddComponent<AudioSource>();
+    //        AudioClip clip = Resources.Load("sounds/mus_1") as AudioClip;
+    //        source.clip = clip;
+    //        source.volume = .75f;
+    //        source.loop = true;
+    //        source.Play();
 
-            //
+    //        audioName = "sounds/mus_2";
+    //        AudioSource source2 = gameObject.AddComponent<AudioSource>();
+    //        AudioClip clip2 = Resources.Load("sounds/mus_2") as AudioClip;
+    //        source.clip = clip2;
+    //        source.volume = .75f;
+    //        source.loop = true;
+    //        source.Play();
 
+    //        audioName = "sounds/mus_3";
+    //        AudioSource source3 = gameObject.AddComponent<AudioSource>();
+    //        AudioClip clip3 = Resources.Load("sounds/mus_3") as AudioClip;
+    //        source.clip = clip3;
+    //        source.volume = .75f;
+    //        source.loop = true;
+    //        source.Play();
+    //        print(audioName);
 
-            AudioSource source = gameObject.AddComponent<AudioSource>();
-    AudioClip clip = Resources.Load(audioName) as AudioClip;
-         source.clip = clip;
-        source.volume = .75f;
-            //source.pitch = Mathf.Lerp( 1f, 1.4f, ((float)Random.Range (1, 20)/10) );
-            source.loop = true;
-            source.Play();
-            //Destroy(source, source.clip.length);
+    //        audioName = "sounds/mus_4";
+    //        AudioSource source4 = gameObject.AddComponent<AudioSource>();
+    //        AudioClip clip4 = Resources.Load("sounds/mus_4") as AudioClip;
+    //        source.clip = clip4;
+    //        source.volume = .75f;
+    //        source.loop = true;
+    //        source.Play();
+    //        print(audioName);
 
-            //Destroy(this.gameObject);
+    //    }
+    //}
 
-        }
-}
-
-  
 
 }

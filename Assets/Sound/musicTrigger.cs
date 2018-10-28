@@ -8,7 +8,7 @@ public class musicTrigger : MonoBehaviour {
 
     //float volume = .5f
  
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerExit2D(Collider2D other)
 	{
         charactercustom character = other.gameObject.GetComponent<charactercustom> ();
 		if (character != null) {
